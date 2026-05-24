@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Wondermakers - Work</title>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <canvas id="canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;"></canvas>
+
+    <header class="site-header" id="site-header">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo" aria-label="Wonder Makers - Home">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-logo-icon">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 11.5C22.4731 11.5001 20.961 11.3267 19.5503 10.7425C18.1395 10.1582 16.8577 9.30173 15.778 8.22201C14.6983 7.1423 13.8418 5.86046 13.2576 4.44972C12.6733 3.03897 12.4999 1.52695 12.5 0H11.5C11.5002 1.52683 11.3252 3.03875 10.7411 4.44942C10.1569 5.86009 9.30065 7.14188 8.2211 8.22159C7.14154 9.3013 5.85988 10.1578 4.44929 10.7421C3.03871 11.3265 1.52683 11.5 0 11.5V12.5C1.52672 12.4997 3.03855 12.6752 4.44912 13.2593C5.8597 13.8434 7.14138 14.6997 8.22096 15.7792C9.30054 16.8587 10.1569 18.1404 10.741 19.5509C11.3252 20.9615 11.5002 22.4733 11.5 24H12.5C12.4999 22.4732 12.6738 20.9613 13.2581 19.5508C13.8424 18.1402 14.6988 16.8585 15.7785 15.779C16.8582 14.6994 18.14 13.8432 19.5506 13.2591C20.9613 12.6751 22.4732 12.4996 24 12.5V11.5Z" fill="currentColor"/>
+          </svg>
+          <span class="nav-logo-text">Wonder Makers</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="work.html" class="nav-link nav-link--active">Work</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#studio" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="https://wondermakers.games/" target="_blank" rel="noopener" class="nav-link nav-link--external">
+            Wonder Games
+            <svg viewBox="0 0 24 24" fill="none" class="nav-external-icon"><path d="M4 12H20M14 6L20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="btn-cta btn-cta--mobile" id="contact-btn-mobile" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Let's talk
+            <span class="btn-cta__arrow">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </button>
+        </nav>
+
+        <!-- Right side controls -->
+        <div class="nav-right">
+          <!-- Theme Switch -->
+          <div class="theme-switch" id="theme-switch">
+            <button class="theme-switch__btn theme-switch__btn--active" data-theme="light" id="theme-light">Light</button>
+            <button class="theme-switch__btn" data-theme="dark" id="theme-dark">Dark</button>
+            <div class="theme-switch__slider" id="theme-slider"></div>
+          </div>
+
+          <!-- CTA Button Desktop -->
+          <button class="btn-cta btn-cta--desktop" id="contact-btn-desktop" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Let's talk
+            <span class="btn-cta__arrow">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </button>
+
+          <!-- Hamburger -->
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+            <span class="nav-hamburger__bar"></span>
+            <span class="nav-hamburger__bar nav-hamburger__bar--short"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+
+    <main>
+      <!-- Work Section (matches index.html work section placement) -->
+      <section id="work" class="work container" style="padding-top:140px;">
+        <div class="section-header">
+          <h1>GLOBAL WORK.</h1>
+           <h1>ENGINEERED.</h1>
+          <p class="muted">From global brand websites to scalable digital systems. We combine high-end design with <br> technical precision to deliver world-class digital products for companies across <br> continents. </p>
+          EXPERIENCED IN <br>
+          <button class="tech-button">Gaming</button>
+          <button class="tech-button">Web3</button> 
+          <button class="tech-button">Fintech</button> 
+          <button class="tech-button">Premium Retail</button>
+          <button class="tech-button">Education</button>
+          <button class="tech-button">Real Estate</button>
+          <button class="tech-button">and more</button>
+        </div>
+        
+        <div class="work-grid">
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/1.png" alt="Avax.network" />
+            </div>
+            <div class="project-meta">AVAX.NETWORK</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/5.png" alt="Ubisoft Might & Magic Fates" />
+            </div>
+            <div class="project-meta">UBISOFT MIGHT & MAGIC FATES</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/2.png" alt="Dimenso Student" />
+            </div>
+            <div class="project-meta">DIMENSO STUDENT</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/PSG.png" alt="PSG - DESIGN CONCET" />
+            </div>
+            <div class="project-meta">PSG - DESIGN CONCET</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/4.png" alt="EPPI" />
+            </div>
+            <div class="project-meta">EPPI</div>
+          </a>
+
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/Sphere.png" alt="SPHERE - DESIGN CONCEPT" />
+            </div>
+            <div class="project-meta">SPHERE - DESIGN CONCEPT</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/Avacloud.png" alt="Avacloud" />
+            </div>
+            <div class="project-meta">AVACLOUD</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/My pet.png" alt="My Pet Hooligan" />
+            </div>
+            <div class="project-meta">MY PET HOOLIGAN</div>
+          </a>
+
+          <a class="project-card" href="#">
+            <div class="project-image">
+              <img src="assets/images/Gods.png" alt="GODS UNCHAINED" />
+            </div>
+            <div class="project-meta">GODS UNCHAINED</div>
+          </a>
+
+          <a class="work-all" href="#">More work<span>SEE ALL WORK</span></a>
+        </div>
+      </section>
+    </main>
+
+        <!-- Below images: keep awards + clients + web3/gaming division (as requested) -->
+        <section class="work-subsection" style="margin-top:64px;">
+          <div class="section-header" style="margin-bottom:32px;">
+            <h1 style="font-size:130px; letter-spacing:0;">OUR AWARDS</h1>
+            <p>Our work is recognized by leading industry platforms for both visual excellence and <br> technical execution. </p>
+          </div>
+    
+    <!-- Footer -->
+          <div class="awards-grid" style="display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px;">
+            <div class="contact-info" style="padding:20px;"><img src="assets/images/award1.png" alt="Awwwards Site of the Day" style="max-width:100%; height:auto;" /></div>
+            <div class="contact-info" style="padding:20px;"><img src="assets/images/award2.png" alt="CSS Design Awards" style="max-width:100%; height:auto;" /></div>
+          </div>
+          <div class="contact-info" style="padding:20px;">ALL AWARDS</div>
+
+              <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Project / Entity</th>
+                <th>Organization</th>
+                <th>Award Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2026</td>
+                <td>Wonder Games</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td rowspan="4">2025</td>
+                <td>Avax.network</td>
+                <td>Awwwards</td>
+                <td>Site of the day</td>
+            </tr>
+            <tr>
+                <td>Avax.network</td>
+                <td>Awwwards</td>
+                <td>Developer Award</td>
+            </tr>
+            <tr>
+                <td>Avax.network</td>
+                <td>WebAwards</td>
+                <td>Winner</td>
+            </tr>
+            <tr>
+                <td>Cosimo Digital</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>My Pet Hooligan</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>Nucleus</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2025</td>
+                <td>Gaming on Avalanche</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>Project Eluüne</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2018</td>
+                <td>VA Fighters Agency</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td>VA Fighters Agency</td>
+                <td>Awwwards</td>
+                <td>Honorable Mention</td>
+            </tr>
+        </tbody>
+    </table>
+        </section>
+        <section class="work-subsection" style="margin-top:56px;">
+          <div class="section-header" style="margin-bottom:32px;">
+            <h2 style="font-size:34px; letter-spacing:0;">CLIENTS</h2>
+            <p class="muted">Trusted by global industry leaders and ambitious startups to build high-impact digital products.</p>
+          </div>
+          <div class="clients-layout">
+              <div class="clients-row">
+              <div class="client-category">STARTUPS</div>
+              <div class="clients-companies" aria-label="Startups companies">
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/1.png" alt="Startups 1" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/2.png" alt="Startups 2" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/3.png" alt="Startups 3" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/4.png" alt="Startups 4" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/5.png" alt="Startups 5" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/6.png" alt="Startups 6" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/7.png" alt="Startups 7" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/8.png" alt="Startups 8" /></div>
+              </div>
+            </div>
+
+            <div class="clients-row" id="avax-network">
+              <div class="client-category">GAMING &amp; WEB3</div>
+              <div class="clients-companies" aria-label="Gaming & Web3 companies">
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/Jack 1.png" alt="Gaming & Web3 Jack 1" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/SAP 2.png" alt="Gaming & Web3 SAP 2" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/Finlandia 3.png" alt="Gaming & Web3 Finlandia 3" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/Siemens 4.png" alt="Gaming & Web3 Siemens 4" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/Berec 5.png" alt="Gaming & Web3 Berec 5" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/United Nations 6.png" alt="Gaming & Web3 United Nations 6" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/OBRAZ 7.png" alt="Gaming & Web3 OBRAZ 7" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/Prison 8.png" alt="Gaming & Web3 Prison 8" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/9.png" alt="Gaming & Web3 9" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/10.png" alt="Gaming & Web3 10" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/11.png" alt="Gaming & Web3 11" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/12.png" alt="Gaming & Web3 12" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/13.png" alt="Gaming & Web3 13" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/14.png" alt="Gaming & Web3 14" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/15.png" alt="Gaming & Web3 15" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/16.png" alt="Gaming & Web3 16" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/17.png" alt="Gaming & Web3 17" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/18.png" alt="Gaming & Web3 18" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/19.png" alt="Gaming & Web3 19" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/20.png" alt="Gaming & Web3 20" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/21.png" alt="Gaming & Web3 21" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/22.png" alt="Gaming & Web3 22" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/23.png" alt="Gaming & Web3 23" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/24.png" alt="Gaming & Web3 24" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/25.png" alt="Gaming & Web3 25" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/26.png" alt="Gaming & Web3 26" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/27.png" alt="Gaming & Web3 27" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING & WEB3/28.png" alt="Gaming & Web3 28" /></div>
+              </div>
+            </div>
+
+            <div class="clients-row">
+              <div class="client-category">E-COMMERS</div>
+              <div class="clients-companies" aria-label="E-COMMERS companies">
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/1.png" alt="E-COMMERS 1" /></div>
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/2.png" alt="E-COMMERS 2" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="web3-division-frame">
+            <div style="margin-top:22px; color: var(--muted); text-align:center; font-size:14px;">LEARN MORE ABOUT OUR WEB3 &amp; GAMING DIVISION</div>
+            <div style="margin-top:10px; display:flex; justify-content:center;">
+              <div style="max-width:760px; color: var(--muted); text-align:center;">
+                Alongside our core services, we operate a gaming division focused on real-time 3D, animation, and immersive web experiences — ideal for projects requiring high performance and interactivity.
+              </div>
+              <div class="project-meta">GODS UNCHAINED</div>
+            </a>
+            <a class="work-all" href="#">More work<span>SEE ALL WORK</span></a>
+          </div>
+          </div>
+          <div style="margin-top:16px; display:flex; justify-content:center;">
+            <a class="scroll-link secondary-link" href="#">Go to Wonder Games</a>
+          </div>
+        </section>
+      </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>Privacy policy · Cookies · ICO: 17844576 · DIC: CZ17844576</p>
+      </div>
+    </footer>
+    <!-- Three.js & Custom Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/nav.js"></script>
+    <script type="module" src="src/faq.js"></script>
+    <script type="module" src="src/buildMarquee.js"></script>
+  </body>
+</html>

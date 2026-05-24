@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Award-winning digital product studio. Senior-led teams building high-performance websites, SaaS platforms, premium e-commerce, and Web3 products." />
+    <meta property="og:title" content="High-End Digital Product Studio | Wonder Makers" />
+    <meta property="og:description" content="Award-winning digital product studio. Senior-led teams building high-performance websites, SaaS platforms, premium e-commerce, and Web3 products." />
+    <meta property="og:type" content="website" />
+    <title>Wonder Makers | High-End Digital Product Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <!-- Background Interactive 3D Scene -->
+    <canvas id="canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none;"></canvas>
+
+    <!-- Navigation -->
+    <header class="site-header" id="site-header">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo" aria-label="Wonder Makers - Home">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-logo-icon">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M24 11.5C22.4731 11.5001 20.961 11.3267 19.5503 10.7425C18.1395 10.1582 16.8577 9.30173 15.778 8.22201C14.6983 7.1423 13.8418 5.86046 13.2576 4.44972C12.6733 3.03897 12.4999 1.52695 12.5 0H11.5C11.5002 1.52683 11.3252 3.03875 10.7411 4.44942C10.1569 5.86009 9.30065 7.14188 8.2211 8.22159C7.14154 9.3013 5.85988 10.1578 4.44929 10.7421C3.03871 11.3265 1.52683 11.5 0 11.5V12.5C1.52672 12.4997 3.03855 12.6752 4.44912 13.2593C5.8597 13.8434 7.14138 14.6997 8.22096 15.7792C9.30054 16.8587 10.1569 18.1404 10.741 19.5509C11.3252 20.9615 11.5002 22.4733 11.5 24H12.5C12.4999 22.4732 12.6738 20.9613 13.2581 19.5508C13.8424 18.1402 14.6988 16.8585 15.7785 15.779C16.8582 14.6994 18.14 13.8432 19.5506 13.2591C20.9613 12.6751 22.4732 12.4996 24 12.5V11.5Z" fill="currentColor"/>
+          </svg>
+          <span class="nav-logo-text">Wonder Makers</span>
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-link nav-link--active">Home</a>
+          <a href="work.html" class="nav-link">Work</a>
+          <a href="index.html#services" class="nav-link">Services</a>
+          <a href="index.html#studio" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="https://wondermakers.games/" target="_blank" rel="noopener" class="nav-link nav-link--external">
+            Wonder Games
+            <svg viewBox="0 0 24 24" fill="none" class="nav-external-icon"><path d="M4 12H20M14 6L20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <button class="btn-cta btn-cta--mobile" id="contact-btn-mobile" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Let's talk
+            <span class="btn-cta__arrow">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </button>
+        </nav>
+
+        <!-- Right side controls -->
+        <div class="nav-right">
+          <!-- Theme Switch -->
+          <div class="theme-switch" id="theme-switch">
+            <button class="theme-switch__btn theme-switch__btn--active" data-theme="light" id="theme-light">Light</button>
+            <button class="theme-switch__btn" data-theme="dark" id="theme-dark">Dark</button>
+            <div class="theme-switch__slider" id="theme-slider"></div>
+          </div>
+
+          <!-- CTA Button Desktop -->
+          <button class="btn-cta btn-cta--desktop" id="contact-btn-desktop" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Let's talk
+            <span class="btn-cta__arrow">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </button>
+
+          <!-- Hamburger -->
+          <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+            <span class="nav-hamburger__bar"></span>
+            <span class="nav-hamburger__bar nav-hamburger__bar--short"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-inner container">
+          <div class="hero-heading">
+            <h1 class="hero-title">High-end design.<br /><span class="hero-title--muted">Crafted code.</span></h1>
+          </div>
+          <p class="hero-sub">We are a digital product studio for teams who see design and engineering as their competitive advantage. From flagship websites to scalable applications, we build products where world-class aesthetics meet robust infrastructure.</p>
+
+          <!-- Scroll Down Arrow -->
+          <a href="#about" class="hero-scroll-btn" aria-label="Scroll to about section">
+            <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- About / Badge Cards Section -->
+      <section id="about" class="about container">
+        <div class="about-grid">
+          <div class="about-card" id="about-card-1">
+            <!-- Clutch Logo SVG -->
+            <svg viewBox="0 0 48 52" fill="none" class="about-card__icon">
+              <path d="M25.9639 34.3394C30.7679 34.3394 34.6622 30.5245 34.6622 25.8186C34.6622 21.1127 30.7679 17.2979 25.9639 17.2979C21.16 17.2979 17.2656 21.1127 17.2656 25.8186C17.2656 30.5245 21.16 34.3394 25.9639 34.3394Z" fill="currentColor"/>
+              <path d="M36.2977 36.3888C33.6817 38.6952 30.2154 39.9765 26.4222 39.9765C24.4951 40.03 22.5773 39.6965 20.7868 38.9966C18.9962 38.2968 17.3709 37.2453 16.0108 35.9069C14.6506 34.5686 13.5846 32.9717 12.8782 31.2145C12.1717 29.4574 11.84 27.5772 11.9032 25.6898C11.9032 17.4252 17.8547 11.6593 26.4222 11.6593C30.15 11.6593 33.6817 12.8765 36.3631 15.1829L38.1943 16.7205L46.304 8.77632L44.2766 6.98247C39.3655 2.69152 33.0028 0.339921 26.4222 0.383656C11.38 0.383656 0.458063 11.0186 0.458063 25.6257C0.378141 28.9932 0.994105 32.3417 2.26896 35.47C3.54381 38.5983 5.45122 41.4418 7.87653 43.8296C10.3018 46.2174 13.195 48.1001 16.382 49.3647C19.5691 50.6292 22.9842 51.2495 26.4222 51.1881C33.2893 51.1881 39.6985 48.8176 44.4074 44.5252L46.3694 42.7314L38.1289 34.7872L36.2977 36.3888Z" fill="currentColor"/>
+            </svg>
+            <p>Rated 5.0 on Clutch</p>
+          </div>
+
+          <div class="about-card" id="about-card-2">
+            <img src="assets/images/10x.png" alt="10x awarded by Awwwards" class="about-card__badge-img" />
+            <p>10× Awwwards</p>
+          </div>
+
+          <div class="about-card" id="about-card-3">
+            <img src="assets/images/Awarded by Webaward.png" alt="Awarded by Webaward" class="about-card__badge-img" />
+            <p>WebAward Winner</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work Section -->
+      <section id="work" class="work container">
+        <div class="section-header">
+          <h2>Work</h2>
+          <p class="muted">Award-winning craft, technical reliability.<br />Recognized by platforms like Awwwards for visual excellence, our work is built to meet the technical demands of industry-leading brands.</p>
+        </div>
+        <div class="work-grid">
+          <a class="project-card" href="work.html">
+            <div class="project-title">AVAX.NETWORK</div>
+            <div class="project-image">
+              <img src="assets/images/1.png" alt="Avax.network" loading="lazy" />
+            </div>
+            <div class="project-meta">Company Website</div>
+          </a>
+          <a class="project-card" href="work.html">
+            <div class="project-title">DIMENSO STUDENT</div>
+            <div class="project-image">
+              <img src="assets/images/2.png" alt="Dimenso Student" loading="lazy" />
+            </div>
+            <div class="project-meta">Mobile App</div>
+          </a>
+          <a class="project-card" href="work.html">
+            <div class="project-title">CATI.IO</div>
+            <div class="project-image">
+              <img src="assets/images/3.png" alt="Cati.io" loading="lazy" />
+            </div>
+            <div class="project-meta">Web App</div>
+          </a>
+          <a class="project-card" href="work.html">
+            <div class="project-title">EPPI</div>
+            <div class="project-image">
+              <img src="assets/images/4.png" alt="EPPI" loading="lazy" />
+            </div>
+            <div class="project-meta">Premium Storefront</div>
+          </a>
+          <a class="project-card" href="work.html">
+            <div class="project-title">UBISOFT MIGHT &amp; MAGIC FATES</div>
+            <div class="project-image">
+              <img src="assets/images/5.png" alt="Ubisoft Might &amp; Magic Fates" loading="lazy" />
+            </div>
+            <div class="project-meta">Web3 App</div>
+          </a>
+          <a class="work-all" href="work.html">More work <span>SEE ALL WORK &rarr;</span></a>
+        </div>
+      </section>
+
+      <!-- What We Build Marquee -->
+      <div class="build-marquee" aria-label="What we build scrolling strip">
+        <div class="build-marquee__left">
+          <div class="build-marquee__track">
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+            <span class="build-marquee__text">WHAT WE BUILD</span>
+            <img class="build-marquee__img-item" src="assets/images/star logo2.jpg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+
+      <!-- What We Build Section -->
+      <section id="build" class="build container">
+        <div class="build-layout">
+          <div class="build-left">
+            <h2 class="build-title">What We Build</h2>
+            <p class="build-desc">We focus on the intersection of high-end design and technical complexity – where our approach creates the most value for digital products.</p>
+
+            <!-- Build item tabs -->
+            <div class="build-tabs" id="build-tabs">
+              <button class="build-tab is-active" data-idx="0">
+                <span class="build-tab__num">01</span>
+                <div>
+                  <strong>Websites &amp; Digital Experiences</strong>
+                  <p>High-performance marketing sites, brand platforms, and digital experiences designed to impress and convert.</p>
+                </div>
+              </button>
+              <button class="build-tab" data-idx="1">
+                <span class="build-tab__num">02</span>
+                <div>
+                  <strong>Apps, Platforms &amp; Real-Time Systems</strong>
+                  <p>Scalable SaaS, dashboards, and real-time applications engineered for performance and reliability.</p>
+                </div>
+              </button>
+              <button class="build-tab" data-idx="2">
+                <span class="build-tab__num">03</span>
+                <div>
+                  <strong>E-commerce &amp; Product Storytelling</strong>
+                  <p>Premium e-commerce experiences that blend editorial design with conversion-focused engineering.</p>
+                </div>
+              </button>
+              <button class="build-tab" data-idx="3">
+                <span class="build-tab__num">04</span>
+                <div>
+                  <strong>Web3 &amp; On-Chain Platforms</strong>
+                  <p>NFT platforms, DeFi apps, blockchain integrations, and immersive Web3 experiences.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="build-right">
+            <div class="build-slideshow" id="build-slideshow">
+              <div class="build-card is-active">
+                <img src="assets/images/Screenshot 2026-05-22 at 6.44.44 PM.png" alt="Websites &amp; Digital Experiences" loading="lazy" onerror="this.src='assets/images/1.png'" />
+              </div>
+              <div class="build-card">
+                <img src="assets/images/Screenshot 2026-05-22 at 6.44.57 PM.png" alt="Apps, Platforms &amp; Real-Time Systems" loading="lazy" onerror="this.src='assets/images/2.png'" />
+              </div>
+              <div class="build-card">
+                <img src="assets/images/Screenshot 2026-05-22 at 6.45.09 PM.png" alt="E-commerce &amp; Product Storytelling" loading="lazy" onerror="this.src='assets/images/3.png'" />
+              </div>
+              <div class="build-card">
+                <img src="assets/images/screenshot-2026-05-22-6-45-19-pm.png" alt="Web3 &amp; On-Chain Platforms" loading="lazy" onerror="this.src='assets/images/4.png'" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Services Section -->
+      <section id="services" class="services container">
+        <div class="services-left">
+          <div class="section-header section-header--left">
+            <h2>Our<br />Services</h2>
+            <p class="muted">From strategy to deployment. We provide full-scope delivery or targeted expertise to solve your specific design and technical challenges.</p>
+          </div>
+          <a class="btn-pill" href="work.html" id="explore-services-cta">
+            Explore Services
+            <span class="btn-pill__circle">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </a>
+        </div>
+        <div class="services-grid">
+          <div class="service-card numbered"><span>01</span>Product Strategy</div>
+          <div class="service-card numbered"><span>02</span>UX/UI Design</div>
+          <div class="service-card numbered"><span>03</span>3D, Motion &amp; Immersive Design</div>
+          <div class="service-card numbered"><span>04</span>Creative Frontend &amp; App Engineering</div>
+          <div class="service-card numbered"><span>05</span>Backend, CMS &amp; System Engineering</div>
+          <div class="service-card numbered"><span>06</span>Web3 &amp; On-Chain Engineering</div>
+        </div>
+      </section>
+
+      <!-- Engagement Models Section -->
+      <section id="engagement" class="engagement container">
+        <div class="section-header">
+          <h2>Engagement Models</h2>
+          <p class="muted">Our engagement models are designed for flexibility, allowing us to adapt each partnership to your product and team structure.</p>
+        </div>
+        <div class="engagement-cards">
+          <div class="engagement-card">
+            <span class="engagement-card__num">01</span>
+            <h3>END-TO-END PRODUCT DELIVERY</h3>
+            <p>We take full ownership of the product lifecycle – from discovery to a scalable digital product.</p>
+            <ul>
+              <li>Senior cross-functional team</li>
+              <li>Discovery to delivery ownership</li>
+              <li>Autonomous process management</li>
+              <li>Defined product strategy and roadmap</li>
+            </ul>
+          </div>
+          <div class="engagement-card engagement-card--lime">
+            <span class="engagement-card__num">02</span>
+            <h3>EMBEDDED EXPERTISE</h3>
+            <p>Our senior specialists integrate directly into your team to fill expertise gaps or accelerate delivery.</p>
+            <ul>
+              <li>Direct integration of senior experts</li>
+              <li>Matches your internal workflow</li>
+              <li>Fills specific expertise gaps</li>
+              <li>Flexible and scalable team growth</li>
+            </ul>
+          </div>
+        </div>
+        <div class="engagement-cta">
+          <button class="btn-pill" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Contact Us
+            <span class="btn-pill__circle">
+              <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Our Edge Section -->
+      <section id="edge" class="edge container">
+        <div class="section-header">
+          <h2>Our Edge</h2>
+          <p class="muted">Design as strategic value, fluid scaling UI, business-driven engineering, and purposeful immersion.</p>
+        </div>
+        <div class="edge-grid">
+          <div class="edge-card">
+            <img src="assets/images/DESIGN AS STRATEGIC VALUE.webp" alt="Design as strategic value" loading="lazy" />
+            <h3>DESIGN AS STRATEGIC VALUE</h3>
+            <p>Design is more than aesthetics. It sharpens positioning, increases perceived value, and drives measurable results.</p>
+          </div>
+          <div class="edge-card">
+            <img src="assets/images/FLUID SCALING UI.webp" alt="Fluid Scaling UI" loading="lazy" />
+            <h3>FLUID SCALING UI</h3>
+            <p>Beyond responsive design. Our Fluid Scaling Systems keep interfaces consistent across every screen size while maintaining performance and clean code.</p>
+          </div>
+          <div class="edge-card">
+            <img src="assets/images/BUSINESS-DRIVEN ENGINEERING.webp" alt="Business-driven engineering" loading="lazy" />
+            <h3>BUSINESS-DRIVEN ENGINEERING</h3>
+            <p>We start with your business goals. From rapid MVP launches to long-term scalability, we choose technologies that balance speed, cost, and future growth.</p>
+          </div>
+          <div class="edge-card">
+            <img src="assets/images/PURPOSEFUL IMMERSION.webp" alt="Purposeful immersion" loading="lazy" />
+            <h3>PURPOSEFUL IMMERSION</h3>
+            <p>We use 3D, motion, and interaction design to create meaningful engagement and tell your story – without compromising usability or performance.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Expertise Section -->
+      <section id="market" class="market container">
+        <div class="section-header">
+          <h2>Market Expertise</h2>
+          <p class="muted">We bring deep domain experience to industries with complex technical and market requirements, helping products scale globally.</p>
+        </div>
+        <div class="market-grid">
+          <div class="market-scroll">
+            <div class="market-row">
+              <div class="market-track">
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Jack 1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/SAP 2.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Finlandia 3.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Siemens 4.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Berec 5.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/United Nations 6.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/OBRAZ 7.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Prison 8.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/9.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/10.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/11.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/12.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/13.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/14.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/2.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/3.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/2.png" alt="Client logo" loading="lazy" /></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Jack 1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/SAP 2.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Finlandia 3.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Siemens 4.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Berec 5.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/United Nations 6.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/OBRAZ 7.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/Prison 8.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/9.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/10.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/11.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/12.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/13.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/14.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/2.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/3.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/1.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/E-COMMERS/2.png" alt="Client logo" loading="lazy" /></div>
+              </div>
+            </div>
+            <div class="market-row market-row--reverse">
+              <div class="market-track market-track--reverse">
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/15.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/16.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/17.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/18.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/19.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/20.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/21.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/22.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/23.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/24.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/25.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/26.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/27.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/28.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/4.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/5.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/6.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/7.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/8.png" alt="Client logo" loading="lazy" /></div>
+                <!-- Duplicate -->
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/15.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/16.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/17.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/18.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/19.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/20.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/21.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/22.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/23.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/24.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/25.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/26.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/27.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/GAMING &amp; WEB3/28.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/4.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/5.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/6.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/7.png" alt="Client logo" loading="lazy" /></div>
+                <div class="market-card"><img src="assets/images/Companies/STARTUPS/8.png" alt="Client logo" loading="lazy" /></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Senior-Led Studio Section -->
+      <section id="studio" class="studio container">
+        <div class="section-header">
+          <h2>Senior-Led Studio</h2>
+          <p class="muted">Proven expertise and global reach. Our senior-led team brings over a decade of design and engineering experience to every product we build.</p>
+        </div>
+        <div class="studio-grid">
+          <div class="studio-card">
+            <span>11+</span>
+            <p>years in digital design &amp; development</p>
+          </div>
+          <div class="studio-img-cell">
+            <img src="assets/images/6.webp" alt="Years of Experience" loading="lazy" />
+          </div>
+          <div class="studio-card">
+            <span>20+</span>
+            <p>inhouse experts</p>
+          </div>
+          <div class="studio-img-cell">
+            <img src="assets/images/7.webp" alt="In-house Experts" loading="lazy" />
+          </div>
+          <div class="studio-card">
+            <span>150+</span>
+            <p>projects delivered</p>
+          </div>
+          <div class="studio-img-cell">
+            <img src="assets/images/8.webp" alt="Projects Delivered" loading="lazy" />
+          </div>
+          <div class="studio-card">
+            <span>3</span>
+            <p>continents covered</p>
+          </div>
+          <div class="studio-img-cell">
+            <img src="assets/images/9.webp" alt="Continents Covered" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section id="faq" class="faq container">
+        <div class="section-header">
+          <h2>FAQ</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>What kinds of projects are a good fit for Wonder Makers?</summary>
+            <div class="answer">Our core areas include high-end websites and digital experiences, applications and SaaS platforms, premium e-commerce, and Web3 or AI products.</div>
+          </details>
+          <details>
+            <summary>What does a project like this typically cost?</summary>
+            <div class="answer">It depends on scope and complexity. Focused projects start from $10,000, full web presences range $40,000–$150,000, and end-to-end digital products start at $80,000.</div>
+          </details>
+          <details>
+            <summary>How do you approach pricing and project models?</summary>
+            <div class="answer">We usually offer fixed-price for well-defined scopes and flexible models for evolving work. Discovery phases are recommended when scope is still unclear.</div>
+          </details>
+          <details>
+            <summary>We're working with a tight deadline – how fast can you move?</summary>
+            <div class="answer">Landing pages can launch in as little as 14 days, full web presences in 6–10 weeks, and digital products in 3–6 months.</div>
+          </details>
+          <details>
+            <summary>Will we actually work with the senior team we meet at the start?</summary>
+            <div class="answer">Yes. Wonder Makers is senior-led, so the team you meet early remains responsible for delivery.</div>
+          </details>
+          <details>
+            <summary>How is your team structured, and how do you handle international collaboration?</summary>
+            <div class="answer">We are Prague-based, working remotely with clients globally using tools like Slack, Figma, and project management platforms.</div>
+          </details>
+          <details>
+            <summary>Can you work alongside our internal team?</summary>
+            <div class="answer">Yes — our senior specialists integrate directly into your team with clear ownership across responsibilities.</div>
+          </details>
+          <details>
+            <summary>We don't have a clear brief yet – can we still start?</summary>
+            <div class="answer">Yes. We typically begin with a Discovery &amp; Definition phase to shape the brief and validate feasibility.</div>
+          </details>
+          <details>
+            <summary>Do you help shape the product, or mainly execute on briefs?</summary>
+            <div class="answer">Strategy is the first service we offer. We help refine the problem before executing the solution.</div>
+          </details>
+          <details>
+            <summary>Is your team experienced enough to handle complex, large-scale technical projects?</summary>
+            <div class="answer">Yes — we build scalable backend architectures, real-time platforms, SaaS products, multi-chain Web3 applications, and performance-critical systems.</div>
+          </details>
+          <details>
+            <summary>How do you approach AI in your work?</summary>
+            <div class="answer">We use AI selectively for ideation and prototyping, with senior review and transparency on any AI-assisted output.</div>
+          </details>
+          <details>
+            <summary>What happens after launch?</summary>
+            <div class="answer">Many clients continue with ongoing development, optimisation, analytics, and iterative UX improvements.</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact container">
+        <div class="contact-header">
+          <p class="contact-eyebrow">WANT TO COLLABORATE?</p>
+          <h2 class="contact-heading">Let's Talk</h2>
+        </div>
+        <div class="contact-layout">
+          <!-- Contact Form -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-name">Full Name *</label>
+                <input type="text" id="contact-name" name="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="contact-email">Email *</label>
+                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="contact-company">Company</label>
+              <input type="text" id="contact-company" name="company" placeholder="Your company name" />
+            </div>
+            <div class="form-group">
+              <label for="contact-budget">Project Budget</label>
+              <select id="contact-budget" name="budget">
+                <option value="" disabled selected>Select budget range</option>
+                <option value="10k-40k">$10,000 – $40,000</option>
+                <option value="40k-80k">$40,000 – $80,000</option>
+                <option value="80k-150k">$80,000 – $150,000</option>
+                <option value="150k+">$150,000+</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Tell us about your project *</label>
+              <textarea id="contact-message" name="message" rows="5" placeholder="Describe your project, goals, and timeline..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="form-submit">
+              Send Message
+              <span class="btn-submit__arrow">
+                <svg viewBox="0 0 9 15" fill="none"><path d="M1 13.6953L7.34767 7.34767L1 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </span>
+            </button>
+            <p class="form-success" id="form-success" style="display:none;">✓ Thank you! We'll get back to you shortly.</p>
+          </form>
+
+          <!-- Contact Info -->
+          <div class="contact-info-panel">
+            <div class="contact-info-block">
+              <h4>WANT TO ASK SOMETHING?</h4>
+              <a href="mailto:team@wondermakers.digital">team@wondermakers.digital</a>
+              <a href="tel:+420603410127">+420 603 410 127</a>
+            </div>
+            <div class="contact-info-block">
+              <h4>WANT TO VISIT US?</h4>
+              <a href="https://maps.google.com/?q=Mezibranska+1668/5,+Prague" target="_blank" rel="noopener">
+                Mezibranska 1668/5,<br />New Town 110 00<br />Prague 1, Czech Republic
+              </a>
+            </div>
+            <div class="contact-info-block">
+              <h4>STAY IN THE LOOP</h4>
+              <div class="social-links">
+                <a href="https://dribbble.com/wondermakers" target="_blank" rel="noopener">Dribbble</a>
+                <a href="https://www.behance.net/wondermakers" target="_blank" rel="noopener">Behance</a>
+                <a href="https://www.instagram.com/wondermakers.digital/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.linkedin.com/company/wondermakersdigital/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://x.com/wmdigi" target="_blank" rel="noopener">X (Twitter)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner container">
+        <div class="footer-left">
+          <a href="index.html" class="footer-logo" aria-label="Wonder Makers Home">
+            <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px;">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M24 11.5C22.4731 11.5001 20.961 11.3267 19.5503 10.7425C18.1395 10.1582 16.8577 9.30173 15.778 8.22201C14.6983 7.1423 13.8418 5.86046 13.2576 4.44972C12.6733 3.03897 12.4999 1.52695 12.5 0H11.5C11.5002 1.52683 11.3252 3.03875 10.7411 4.44942C10.1569 5.86009 9.30065 7.14188 8.2211 8.22159C7.14154 9.3013 5.85988 10.1578 4.44929 10.7421C3.03871 11.3265 1.52683 11.5 0 11.5V12.5C1.52672 12.4997 3.03855 12.6752 4.44912 13.2593C5.8597 13.8434 7.14138 14.6997 8.22096 15.7792C9.30054 16.8587 10.1569 18.1404 10.741 19.5509C11.3252 20.9615 11.5002 22.4733 11.5 24H12.5C12.4999 22.4732 12.6738 20.9613 13.2581 19.5508C13.8424 18.1402 14.6988 16.8585 15.7785 15.779C16.8582 14.6994 18.14 13.8432 19.5506 13.2591C20.9613 12.6751 22.4732 12.4996 24 12.5V11.5Z" fill="currentColor"/>
+            </svg>
+            Wonder Makers
+          </a>
+          <p class="footer-legal">Privacy policy · Cookies · ICO: 17844576 · DIC: CZ17844576</p>
+        </div>
+        <div class="footer-right">
+          <a href="https://wondermakers.games/" target="_blank" rel="noopener" class="footer-games-link">
+            Wonder Games
+            <svg viewBox="0 0 24 24" fill="none" style="width:16px;height:16px;"><path d="M4 12H20M14 6L20 12L14 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.152.2/examples/jsm/"
+      }
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script type="module" src="src/main.js"></script>
+    <script type="module" src="src/nav.js"></script>
+    <script type="module" src="src/faq.js"></script>
+    <script type="module" src="src/buildMarquee.js"></script>
+    <script type="module" src="src/buildTabs.js"></script>
+    <script type="module" src="src/contactForm.js"></script>
+  </body>
+</html>
