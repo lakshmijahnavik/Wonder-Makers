@@ -6,7 +6,6 @@ This project was developed as part of a Frontend Developer Internship assessment
 
 ## Tech Stack
 
-- React.js
 - JavaScript (ES6+)
 - HTML5
 - CSS3
